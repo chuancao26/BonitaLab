@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:decision="http://www.bonitasoft.org/ns/bpm/process/decision" xmlns:expression="http://www.bonitasoft.org/ns/bpm/expression" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:process="http://www.bonitasoft.org/ns/bpm/process">
-  <process:MainProcess xmi:id="_XGhTMEFSEfCGkseLwO4W_A" name="DiagramaSolicitudVacaciones" version="4.0" bonitaModelVersion="8">
-    <elements xmi:type="process:Pool" xmi:id="_XGhTMUFSEfCGkseLwO4W_A" name="Pool" version="4.0">
+  <process:MainProcess xmi:id="_XGhTMEFSEfCGkseLwO4W_A" name="DiagramaSolicitudVacaciones" version="3.0" bonitaModelVersion="8">
+    <elements xmi:type="process:Pool" xmi:id="_XGhTMUFSEfCGkseLwO4W_A" name="Pool" version="3.0">
       <elements xmi:type="process:Lane" xmi:id="_XGhTMkFSEfCGkseLwO4W_A" name="Solicitante" actor="_XGhTm0FSEfCGkseLwO4W_A">
         <elements xmi:type="process:StartEvent" xmi:id="_XGhTM0FSEfCGkseLwO4W_A" name="Ingresar solicitud" outgoing="_XGhTgkFSEfCGkseLwO4W_A">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_XGhTNEFSEfCGkseLwO4W_A" name="" content="" returnTypeFixed="true"/>
@@ -59,7 +59,7 @@
           <completionCondition xmi:type="expression:Expression" xmi:id="_XGhTeEFSEfCGkseLwO4W_A" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
         </elements>
       </elements>
-      <elements xmi:type="process:Lane" xmi:id="_wk1goEFSEfCGkseLwO4W_A" name="Validador">
+      <elements xmi:type="process:Lane" xmi:id="_wk1goEFSEfCGkseLwO4W_A" name="Validador" actor="_lcpucEFWEfCGkseLwO4W_A">
         <elements xmi:type="process:Task" xmi:id="_XGhTN0FSEfCGkseLwO4W_A" name="Validar solicitud" outgoing="_XGhThUFSEfCGkseLwO4W_A" incoming="_XGhTgkFSEfCGkseLwO4W_A" overrideActorsOfTheLane="false">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_XGhTOEFSEfCGkseLwO4W_A" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_XGhTOUFSEfCGkseLwO4W_A" name="" content="" returnTypeFixed="true"/>
@@ -142,6 +142,7 @@
         <condition xmi:type="expression:Expression" xmi:id="_XGhTmkFSEfCGkseLwO4W_A" name="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
       </connections>
       <actors xmi:type="process:Actor" xmi:id="_XGhTm0FSEfCGkseLwO4W_A" documentation="Este es un ejemplo de actor que está mapeado a cualquier usuario de la organización ACME" name="Employee actor" initiator="true"/>
+      <actors xmi:type="process:Actor" xmi:id="_lcpucEFWEfCGkseLwO4W_A" name="validador"/>
       <contract xmi:type="process:Contract" xmi:id="_XGhTnEFSEfCGkseLwO4W_A">
         <inputs xmi:type="process:ContractInput" xmi:id="_XGhTnUFSEfCGkseLwO4W_A" name="solicitudInput" type="COMPLEX" dataReference="solicitud">
           <inputs xmi:type="process:ContractInput" xmi:id="_XGhTnkFSEfCGkseLwO4W_A" name="fechaInicio" type="LOCALDATE"/>
@@ -232,7 +233,7 @@
             </children>
             <children xmi:type="notation:Shape" xmi:id="_XGhT4kFSEfCGkseLwO4W_A" type="3027" element="_XGhTcEFSEfCGkseLwO4W_A" fontName="Segoe UI" fillColor="14334392" lineColor="10710316">
               <children xmi:type="notation:DecorationNode" xmi:id="_XGhT40FSEfCGkseLwO4W_A" type="5017"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XGhT5EFSEfCGkseLwO4W_A" x="193" y="179" width="120" height="60"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XGhT5EFSEfCGkseLwO4W_A" x="174" y="97" width="120" height="60"/>
             </children>
           </children>
           <styles xmi:type="notation:DescriptionStyle" xmi:id="_XGhT5UFSEfCGkseLwO4W_A"/>
@@ -252,7 +253,7 @@
                 </children>
                 <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XGhTxkFSEfCGkseLwO4W_A" x="37" y="42"/>
               </children>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XGhTx0FSEfCGkseLwO4W_A" x="203" y="112"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XGhTx0FSEfCGkseLwO4W_A" x="203" y="112" width="120" height="60"/>
             </children>
           </children>
           <styles xmi:type="notation:DescriptionStyle" xmi:id="_wk3V0UFSEfCGkseLwO4W_A"/>
