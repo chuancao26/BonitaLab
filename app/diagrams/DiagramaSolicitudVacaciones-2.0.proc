@@ -12,6 +12,17 @@
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_qs_UNkDpEfClp4CGIiuULA" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_qs_UN0DpEfClp4CGIiuULA" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_qs_UOEDpEfClp4CGIiuULA" name="" content="" returnTypeFixed="true"/>
+          <operations xmi:type="expression:Operation" xmi:id="_Ww1yAkDtEfClp4CGIiuULA">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_Ww1yA0DtEfClp4CGIiuULA" name="solicitud" content="solicitud" type="TYPE_VARIABLE" returnType="com.company.model.SolicitudVacaciones">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_Ww1yBEDtEfClp4CGIiuULA" name="solicitud" dataType="_qs_UpEDpEfClp4CGIiuULA" className="com.company.model.SolicitudVacaciones"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_Ww1yBUDtEfClp4CGIiuULA" name="solicitudInput.estaAprobado" content="solicitudInput?.estaAprobado" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Boolean">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_Ww1yBkDtEfClp4CGIiuULA" name="solicitudInput" type="COMPLEX" createMode="false"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_Ww1yB0DtEfClp4CGIiuULA" type="JAVA_METHOD" expression="setEstaAprobado">
+              <inputTypes>java.lang.Boolean</inputTypes>
+            </operator>
+          </operations>
           <loopCondition xmi:type="expression:Expression" xmi:id="_qs_UOUDpEfClp4CGIiuULA" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <loopMaximum xmi:type="expression:Expression" xmi:id="_qs_UOkDpEfClp4CGIiuULA" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
           <cardinalityExpression xmi:type="expression:Expression" xmi:id="_qs_UO0DpEfClp4CGIiuULA" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
@@ -23,7 +34,11 @@
           <formMapping xmi:type="process:FormMapping" xmi:id="_qs_UQEDpEfClp4CGIiuULA">
             <targetForm xmi:type="expression:Expression" xmi:id="_3jkIkEDqEfClp4CGIiuULA" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
           </formMapping>
-          <contract xmi:type="process:Contract" xmi:id="_qs_UQkDpEfClp4CGIiuULA"/>
+          <contract xmi:type="process:Contract" xmi:id="_qs_UQkDpEfClp4CGIiuULA">
+            <inputs xmi:type="process:ContractInput" xmi:id="_Ww1yAEDtEfClp4CGIiuULA" name="solicitudInput" type="COMPLEX" dataReference="solicitud" createMode="false">
+              <inputs xmi:type="process:ContractInput" xmi:id="_Ww1yAUDtEfClp4CGIiuULA" name="estaAprobado" type="BOOLEAN" createMode="false"/>
+            </inputs>
+          </contract>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_qs_UQ0DpEfClp4CGIiuULA" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
         </elements>
         <elements xmi:type="process:ServiceTask" xmi:id="_qs_UREDpEfClp4CGIiuULA" name="Notificar aprobación" outgoing="_qs_UfEDpEfClp4CGIiuULA" incoming="_qs_UeUDpEfClp4CGIiuULA">
@@ -100,7 +115,9 @@
       </connections>
       <connections xmi:type="process:SequenceFlow" xmi:id="_qs_UeUDpEfClp4CGIiuULA" name="Sí " target="_qs_UREDpEfClp4CGIiuULA" source="_qs_UTUDpEfClp4CGIiuULA">
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_qs_UekDpEfClp4CGIiuULA"/>
-        <condition xmi:type="expression:Expression" xmi:id="_qs_Ue0DpEfClp4CGIiuULA" name="true" content="true" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+        <condition xmi:type="expression:Expression" xmi:id="_qs_Ue0DpEfClp4CGIiuULA" name="newScript()" content="solicitud.estaAprobado" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Boolean" returnTypeFixed="true">
+          <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_pN_CwEDtEfClp4CGIiuULA" name="solicitud" dataType="_qs_UpEDpEfClp4CGIiuULA" className="com.company.model.SolicitudVacaciones"/>
+        </condition>
       </connections>
       <connections xmi:type="process:SequenceFlow" xmi:id="_qs_UfEDpEfClp4CGIiuULA" target="_qs_UUUDpEfClp4CGIiuULA" source="_qs_UREDpEfClp4CGIiuULA">
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_qs_UfUDpEfClp4CGIiuULA"/>
