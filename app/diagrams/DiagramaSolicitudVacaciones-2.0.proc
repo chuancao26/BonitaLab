@@ -21,7 +21,7 @@
             <condition xmi:type="expression:Expression" xmi:id="_qs_UP0DpEfClp4CGIiuULA" name="00:00:05" content="5000L" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Long"/>
           </BoundaryIntermediateEvents>
           <formMapping xmi:type="process:FormMapping" xmi:id="_qs_UQEDpEfClp4CGIiuULA">
-            <targetForm xmi:type="expression:Expression" xmi:id="_qs_UQUDpEfClp4CGIiuULA" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+            <targetForm xmi:type="expression:Expression" xmi:id="_3jkIkEDqEfClp4CGIiuULA" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
           </formMapping>
           <contract xmi:type="process:Contract" xmi:id="_qs_UQkDpEfClp4CGIiuULA"/>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_qs_UQ0DpEfClp4CGIiuULA" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
@@ -77,8 +77,15 @@
           <completionCondition xmi:type="expression:Expression" xmi:id="_qs_UbkDpEfClp4CGIiuULA" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
         </elements>
       </elements>
+      <data xmi:type="process:BusinessObjectData" xmi:id="_y4GpkEDrEfClp4CGIiuULA" name="solicitud" dataType="_qs_UpEDpEfClp4CGIiuULA" className="com.company.model.SolicitudVacaciones">
+        <defaultValue xmi:type="expression:Expression" xmi:id="_VNaF0kDsEfClp4CGIiuULA" name="initSolicitud()" content="import org.bonitasoft.engine.identity.UserNotFoundException&#xD;&#xA;&#xD;&#xA;def solicitudVacacionesVar = new com.company.model.SolicitudVacaciones()&#xD;&#xA;solicitudVacacionesVar.fechaInicio = solicitudInput?.fechaInicio&#xD;&#xA;solicitudVacacionesVar.numeroDias = solicitudInput?.numeroDias&#xD;&#xA;try{&#xD;&#xA;&#x9;def processInitiator = apiAccessor.getIdentityAPI().getUser(apiAccessor.getProcessAPI()&#xD;&#xA;&#x9;&#x9;&#x9;.getProcessInstance(processInstanceId)&#xD;&#xA;&#x9;&#x9;&#x9;.getStartedBy())&#xD;&#xA;&#x9;solicitudVacacionesVar.solicitanteId = processInitiator.id&#xD;&#xA;}catch(UserNotFoundException e){&#xD;&#xA;&#x9;// Handle UserNotFoundException here&#xD;&#xA;&#x9;// Was the process started by the system (e.g.: a start event) ?&#xD;&#xA;&#x9;// Has the user who started the process instance been deleted ?&#xD;&#xA;}&#xD;&#xA;return solicitudVacacionesVar" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.SolicitudVacaciones">
+          <referencedElements xmi:type="process:ContractInput" xmi:id="_2ok1EEDsEfClp4CGIiuULA" name="solicitudInput" type="COMPLEX"/>
+          <referencedElements xmi:type="expression:Expression" xmi:id="_2ok1EUDsEfClp4CGIiuULA" name="processInstanceId" content="processInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
+          <referencedElements xmi:type="expression:Expression" xmi:id="_2ok1EkDsEfClp4CGIiuULA" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
+        </defaultValue>
+      </data>
       <formMapping xmi:type="process:FormMapping" xmi:id="_qs_Ub0DpEfClp4CGIiuULA">
-        <targetForm xmi:type="expression:Expression" xmi:id="_qs_UcEDpEfClp4CGIiuULA" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+        <targetForm xmi:type="expression:Expression" xmi:id="_3jkIkUDqEfClp4CGIiuULA" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
       <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_qs_UcUDpEfClp4CGIiuULA">
         <targetForm xmi:type="expression:Expression" xmi:id="_qs_UckDpEfClp4CGIiuULA" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
@@ -116,7 +123,18 @@
         <condition xmi:type="expression:Expression" xmi:id="_qs_UikDpEfClp4CGIiuULA" name="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
       </connections>
       <actors xmi:type="process:Actor" xmi:id="_qs_Ui0DpEfClp4CGIiuULA" documentation="Este es un ejemplo de actor que está mapeado a cualquier usuario de la organización ACME" name="Employee actor" initiator="true"/>
-      <contract xmi:type="process:Contract" xmi:id="_qs_UjEDpEfClp4CGIiuULA"/>
+      <contract xmi:type="process:Contract" xmi:id="_qs_UjEDpEfClp4CGIiuULA">
+        <inputs xmi:type="process:ContractInput" xmi:id="_VNZewEDsEfClp4CGIiuULA" name="solicitudInput" type="COMPLEX" dataReference="solicitud">
+          <inputs xmi:type="process:ContractInput" xmi:id="_VNZewUDsEfClp4CGIiuULA" name="fechaInicio" type="LOCALDATE"/>
+          <inputs xmi:type="process:ContractInput" xmi:id="_VNZewkDsEfClp4CGIiuULA" name="numeroDias" type="INTEGER"/>
+        </inputs>
+        <constraints xmi:type="process:ContractConstraint" xmi:id="_VNaF0EDsEfClp4CGIiuULA" expression="solicitudInput?.fechaInicio != null" errorMessage="fechaInicio is mandatory for SolicitudVacaciones" name="mandatory_solicitudInput_fechaInicio">
+          <inputNames>solicitudInput</inputNames>
+        </constraints>
+        <constraints xmi:type="process:ContractConstraint" xmi:id="_VNaF0UDsEfClp4CGIiuULA" expression="solicitudInput?.numeroDias != null" errorMessage="numeroDias is mandatory for SolicitudVacaciones" name="mandatory_solicitudInput_numeroDias">
+          <inputNames>solicitudInput</inputNames>
+        </constraints>
+      </contract>
       <searchIndexes xmi:type="process:SearchIndex" xmi:id="_qs_UjUDpEfClp4CGIiuULA">
         <name xmi:type="expression:Expression" xmi:id="_qs_UjkDpEfClp4CGIiuULA" content="" returnTypeFixed="true"/>
         <value xmi:type="expression:Expression" xmi:id="_qs_Uj0DpEfClp4CGIiuULA" content="" returnTypeFixed="true"/>
