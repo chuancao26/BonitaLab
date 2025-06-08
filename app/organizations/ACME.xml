@@ -554,7 +554,7 @@
       <description></description>
     </role>
     <role name="validador">
-      <displayName>Rol1</displayName>
+      <displayName>Validador</displayName>
     </role>
   </roles>
   <groups>
@@ -620,12 +620,6 @@
     <membership>
       <userName>april.sanchez</userName>
       <roleName>member</roleName>
-      <groupName>hr</groupName>
-      <groupParentPath>/acme</groupParentPath>
-    </membership>
-    <membership>
-      <userName>helen.kelly</userName>
-      <roleName>validador</roleName>
       <groupName>hr</groupName>
       <groupParentPath>/acme</groupParentPath>
     </membership>
@@ -736,6 +730,12 @@
       <roleName>member</roleName>
       <groupName>north_america</groupName>
       <groupParentPath>/acme/sales</groupParentPath>
+    </membership>
+    <membership>
+      <userName>helen.kelly</userName>
+      <roleName>validador</roleName>
+      <groupName>hr</groupName>
+      <groupParentPath>/acme</groupParentPath>
     </membership>
   </memberships>
 </organization:Organization>
