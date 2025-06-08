@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:decision="http://www.bonitasoft.org/ns/bpm/process/decision" xmlns:expression="http://www.bonitasoft.org/ns/bpm/expression" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:process="http://www.bonitasoft.org/ns/bpm/process">
-  <process:MainProcess xmi:id="_XGhTMEFSEfCGkseLwO4W_A" name="DiagramaSolicitudVacaciones" version="3.0" bonitaModelVersion="8">
-    <elements xmi:type="process:Pool" xmi:id="_XGhTMUFSEfCGkseLwO4W_A" name="Pool" version="3.0">
+  <process:MainProcess xmi:id="_XGhTMEFSEfCGkseLwO4W_A" name="DiagramaSolicitudVacaciones" version="3.12" bonitaModelVersion="8">
+    <elements xmi:type="process:Pool" xmi:id="_XGhTMUFSEfCGkseLwO4W_A" name="Pool" version="3.12">
       <elements xmi:type="process:Lane" xmi:id="_XGhTMkFSEfCGkseLwO4W_A" name="Solicitante" actor="_XGhTm0FSEfCGkseLwO4W_A">
         <elements xmi:type="process:StartEvent" xmi:id="_XGhTM0FSEfCGkseLwO4W_A" name="Ingresar solicitud" outgoing="_XGhTgkFSEfCGkseLwO4W_A">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_XGhTNEFSEfCGkseLwO4W_A" name="" content="" returnTypeFixed="true"/>
@@ -102,7 +102,7 @@
         </defaultValue>
       </data>
       <formMapping xmi:type="process:FormMapping" xmi:id="_XGhTfkFSEfCGkseLwO4W_A">
-        <targetForm xmi:type="expression:Expression" xmi:id="_XGhTf0FSEfCGkseLwO4W_A" name="ingresarSolicitudVacaciones" content="a3d5de84-3a76-4409-8753-bb65b878a3ee" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+        <targetForm xmi:type="expression:Expression" xmi:id="_XGhTf0FSEfCGkseLwO4W_A" name="ingresarSolicitudVacaciones2" content="a3d5de84-3a76-4409-8753-bb65b878a3ee" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
       <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_XGhTgEFSEfCGkseLwO4W_A">
         <targetForm xmi:type="expression:Expression" xmi:id="_XGhTgUFSEfCGkseLwO4W_A" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
