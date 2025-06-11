@@ -4,7 +4,7 @@
   "type" : "page",
   "uuid" : "d26004b5-5d40-4082-9153-1be9e16b8c11",
   "modelVersion" : "2.6",
-  "lastUpdate" : 1749501031841,
+  "lastUpdate" : 1749603923729,
   "description" : "Page generated with Bonita UI designer",
   "rows" : [
     [
@@ -124,17 +124,48 @@
                     "type" : "constant",
                     "value" : false
                   },
-                  "disabled" : {
-                    "type" : "constant",
-                    "value" : false
-                  },
                   "allowHTML" : {
                     "type" : "constant",
                     "value" : false
                   },
-                  "label" : {
+                  "text" : {
                     "type" : "interpolation",
                     "value" : "Crear una nueva solicitud"
+                  },
+                  "type" : {
+                    "type" : "constant",
+                    "value" : "process"
+                  },
+                  "targetUrl" : {
+                    "type" : "constant",
+                    "value" : "http://"
+                  },
+                  "pageToken" : {
+                    "type" : "constant"
+                  },
+                  "processName" : {
+                    "type" : "constant",
+                    "value" : "SolicitudVacaciones"
+                  },
+                  "processVersion" : {
+                    "type" : "constant",
+                    "value" : "3.0"
+                  },
+                  "taskId" : {
+                    "type" : "constant"
+                  },
+                  "caseId" : {
+                    "type" : "constant"
+                  },
+                  "target" : {
+                    "type" : "constant",
+                    "value" : "_self"
+                  },
+                  "appToken" : {
+                    "type" : "constant"
+                  },
+                  "urlParams" : {
+                    "type" : "constant"
                   },
                   "alignment" : {
                     "type" : "constant",
@@ -143,61 +174,11 @@
                   "buttonStyle" : {
                     "type" : "constant",
                     "value" : "primary"
-                  },
-                  "action" : {
-                    "type" : "constant",
-                    "value" : "POST"
-                  },
-                  "assign" : {
-                    "type" : "constant",
-                    "value" : false
-                  },
-                  "url" : {
-                    "type" : "interpolation",
-                    "value" : "../API/bpm/process/{{informacionDefinicionProceso[0].id}}/instantiation"
-                  },
-                  "responseStatusCode" : {
-                    "type" : "variable"
-                  },
-                  "dataToSend" : {
-                    "type" : "expression",
-                    "value" : "nuevaSolicitudVacaciones"
-                  },
-                  "dataFromSuccess" : {
-                    "type" : "variable"
-                  },
-                  "closeOnSuccess" : {
-                    "type" : "constant",
-                    "value" : false
-                  },
-                  "dataFromError" : {
-                    "type" : "variable"
-                  },
-                  "targetUrlOnSuccess" : {
-                    "type" : "interpolation",
-                    "value" : "/bonita/apps/solicitud-vacaciones"
-                  },
-                  "collectionToModify" : {
-                    "type" : "variable"
-                  },
-                  "modalId" : {
-                    "type" : "constant",
-                    "value" : ""
-                  },
-                  "collectionPosition" : {
-                    "type" : "constant",
-                    "value" : "Last"
-                  },
-                  "valueToAdd" : {
-                    "type" : "constant"
-                  },
-                  "removeItem" : {
-                    "type" : "variable"
                   }
                 },
-                "reference" : "af0286f6-2302-4933-b9e1-8a9126be5330",
+                "reference" : "4612a936-24b2-4a44-969a-d163710de193",
                 "hasValidationError" : false,
-                "id" : "pbButton"
+                "id" : "pbLink"
               }
             ]
           ]
